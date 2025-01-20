@@ -4,10 +4,10 @@ function getCharacterInfo() {
 
     const characterName = characterInput.value.toLowerCase()
 
-    fetch (`https://rickandmortyapi.com/api/character/?name=${characterName}`)
+    fetch (`http://localhost:3000/characters/${characterName}`)
         .then (response => response.json())
         .then (data => {
-            const character = data.results[0]
+            const character = data[0]
 
             characterInfo.innerHTML = `
             <h2>${character.name}</h2>
